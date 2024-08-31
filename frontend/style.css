@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'DINRoundPro-black';
+    src: url('./assets/fonts/DINRoundPro-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color:  #e11d48;
+}
+
+* {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-font {
+    font-family: 'DINRoundPro-black', sans-serif;
+    background-color: var(--primary-color);
+    padding: .1em;
+    border-radius: .1em;
+}
+
+.menu-bg-image { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/images/backgroundMenu.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
