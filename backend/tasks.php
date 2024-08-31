@@ -1,10 +1,13 @@
 <?php 
 require "./database/mysqlConnection.php";
 
-function f_params_to_member() {
+function f_params_to_task() {
     $data = array(
-        'name' => $_GET['name'],
-        'id' => $_GET['id'] ?? 0
+        "id" => $_GET["id"] ?? 0,
+        "title" => $_GET["title"],
+        "description" => $_GET["description"] ?? "",
+        "status" => $_GET['status'] ?? "",
+        "assigned_to" => $_GET["assigned_to"]
     );
 
     return $data;
@@ -13,28 +16,28 @@ function f_params_to_member() {
 // CRUD
 
 // CREATE
-function f_create_member() {
+function f_create_task() {
     try {
-        $member = f_params_to_member();
-        $name = $member['name'];
+        $task = f_params_to_task();
+        
+        $title = $task['title'];
+        $description = $task['description'];
+        $assigned_to = $task['assigned_to'];
 
-        $sql = "INSERT INTO members(name) VALUES('$name')";
+        $sql = "INSERT INTO tasks(title, description, assigned_to) values('$title', '$description', $assigned_to)";
         
         $conn = f_connection();
 
         if(!$conn->query($sql) === TRUE) {
             $conn->close();
-            throw new Exception("Error when creating new member");
+            throw new Exception("Error when creating new task");
         }
 
         $response = array(
-            "message" => "Member created successfully",
+            "message" => "Task created successfully",
             "status" => 201
         );
-
-        $conn->close();
         print(json_encode($response));
-        
     } catch(Exception $e) {
         $response = array(
             "message" => $e->getMessage(),
@@ -46,7 +49,7 @@ function f_create_member() {
 }
 
 // READ
-function f_list_member() {
+function f_list_task() {
     try {
         $queryWhere = " WHERE ";
         $firstParam = true;  
@@ -60,7 +63,7 @@ function f_list_member() {
             $queryWhere .= "$param = $_GET[$param]";
         }
 
-        $sql = "SELECT id, name from members";
+        $sql = "SELECT id, title, description, assigned_to, status, due_date from tasks";
         if($queryWhere != " WHERE ")
             $sql .= $queryWhere;
 
@@ -69,27 +72,31 @@ function f_list_member() {
         $result = $conn->query($sql);
 
         if($result->num_rows > 0) {
-            $jsonMembersArr = [];
+            $jsonTasksArr = [];
             $cont = 0;
 
             while($register = $result->fetch_assoc()) {
-                $jsonMember = [];
-                $jsonMember["id"] = $register["id"];
-                $jsonMember["name"] = $register["name"];
+                $jsonTask = [];
+                $jsonTask["id"] = $register["id"];
+                $jsonTask["title"] = $register["title"];
+                $jsonTask["description"] = $register["description"];
+                $jsonTask["assigned_to"] = $register["assigned_to"];
+                $jsonTask["status"] = $register["status"];
+                $jsonTask["due_date"] = $register["due_date"];
 
-                $jsonMembersArr[$cont++] = $jsonMember;
+                $jsonTasksArr[$cont++] = $jsonTask;
             }
         }
 
         $response = array(
-            "list" => $jsonMembersArr,
+            "list" => $jsonTasksArr,
             "status" => 200
         );
 
         print(json_encode($response));
     }catch(Exception $e) {
         $response = array(
-            "message" => $e->getMessage() ?? 'Error whern listing members',
+            "message" => $e->getMessage() ?? 'Error whern listing tasks',
             "status" => 500
         );
 
@@ -98,52 +105,35 @@ function f_list_member() {
 }
 
 // UPDATE
-function f_update_member(){
+function f_update_task() {
     try {
-        $member = f_params_to_member();
-        $name = $member['name'];
-        $id = $member['id'];
+        $task = f_params_to_task();
+        $id = $task['id'];
+        $title = $task['title'];
+        $description = $task['description'];
+        $assigned_to = $task['assigned_to'];
+        $status = $task['status'];
 
-        $sql = "UPDATE members SET name = '$name' WHERE id = $id";
+        $valueStatus = "";
+        if($status) 
+            $valueStatus = ",status = '$status'";
+
+        $sql = "UPDATE tasks 
+                SET 
+                    title = '$title', 
+                    description = '$description', 
+                    assigned_to = $assigned_to
+                ".$valueStatus.
+                "WHERE id = $id";
 
         $conn = f_connection();
         if(!$conn->query($sql) === TRUE) {
             $conn->close();
-            throw new Exception("Erro when updating member");
+            throw new Exception("Erro when updating task");
         }
 
         $response = array(
-            "message" => "Member updates successfully",
-            "status" => 200
-        );
-
-        $conn->close();
-        print(json_encode($response));
-        
-    } catch(Exception $e) {
-        $response = array(
-            "message" => $e->getMessage(),
-            "status" => 500
-        );
-
-        print(json_encode($response));
-    }
-}
-
-function f_delete_member(){
-    try {
-        $id = $_GET['id'];
-
-        $sql = "DELETE FROM members WHERE id = $id";
-
-        $conn = f_connection();
-        if(!$conn->query($sql) === TRUE) {
-            $conn->close();
-            throw new Exception("Erro when deleting member");
-        }
-
-        $response = array(
-            "message" => "Member successfully deleted",
+            "message" => "Task updates successfully",
             "status" => 200
         );
 
@@ -161,24 +151,53 @@ function f_delete_member(){
 }
 
 // DELETE
+function f_delete_task() {
+    try {
+        $id = $_GET['id'];
+
+        $sql = "DELETE FROM tasks WHERE id = $id";
+
+        $conn = f_connection();
+        if(!$conn->query($sql) === TRUE) {
+            $conn->close();
+            throw new Exception("Erro when deleting task");
+        }
+
+        $response = array(
+            "message" => "Task successfully deleted",
+            "status" => 200
+        );
+
+        $conn->close();
+        print(json_encode($response));
+        
+    } catch(Exception $e) {
+        $response = array(
+            "message" => $e->getMessage(),
+            "status" => 500
+        );
+
+        print(json_encode($response));
+    }
+}
+
 function f_start() {
-    // server based on http methods
     $method = $_SERVER['REQUEST_METHOD'];
 
     switch($method) {
         case "GET":
-            f_list_member();
+            f_list_task();
             break;
         case "POST":
-            f_create_member();
+            f_create_task();
             break;
         case "PUT":
-            f_update_member();
+            f_update_task();
             break;
         case "DELETE":
-            f_delete_member();
+            f_delete_task();
             break;
-        default: 
+        default:
             $response = array(
                 "message" => "Metodo desconhecido",
                 "status" => 500
@@ -186,7 +205,7 @@ function f_start() {
 
             print(json_encode($response));
             break;
-    };
+    }
 }
 
 f_start();
