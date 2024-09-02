@@ -31,3 +31,113 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* .list-benefits{
+    display: flex;
+    width: 100%;
+} */
+
+.list-benefits-section {
+    --timing: .4s;
+    transition: all var(--timing) ease-out;
+    height: 25em;
+    
+
+
+}
+
+.list-benefits {
+    min-height: 100%;
+    transition: all var(--timing) ease-out;
+    background-color: blue;
+    
+}
+
+.list-benefits > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .7em;
+    width: 25%;
+    
+    background-color: green;
+}
+
+.list-benefits > li > h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+.list-benefits > li > div{
+    transition: all var(--timing) ease-out;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+
+    width: 5em;
+    height: 5em;
+    padding: 1.5em;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.list-benefits > li > div > p{
+    --timing: .5s;
+    opacity: 0;
+    transition: all var(--timing) ease-out;
+    overflow: hidden;
+    text-align: center;
+}
+
+.list-benefits > li > div > img{
+    width: 4em;
+    --timing: .5s;
+}
+
+.list-benefits > li > div:hover{
+
+    cursor: pointer;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em; */
+
+    border-radius: .5em;
+    height: 15em;
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.list-benefits > li > div:hover p{
+    opacity: 100;
+    transition: all var(--timing) ease-out;
+}
+
+/* .list-benefits > li > div:hover img{
+    width: 4em;
+    transition: all var(--timing) ease-out;
+} */
+
+/* .list-benefits > li > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 1em;
+    border-radius: .5em;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.list-benefits > li > div > p{
+    text-align: center;
+}
+
+.list-benefits > li > div > img{
+    width: 4em;
+} */
