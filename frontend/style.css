@@ -13,10 +13,20 @@
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
-body {
-    display: flex;
-    justify-content: center;
+
+::-webkit-scrollbar {
+    width: 6px; 
 }
+
+::-webkit-scrollbar-track {
+    background: transparent
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
 
 .logo-font {
     font-family: 'DINRoundPro-black', sans-serif;
@@ -25,6 +35,8 @@ body {
     border-radius: .1em;
 }
 
+
+
 .menu-bg-image { 
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/images/backgroundMenu.jpg');
     background-size: cover;
@@ -32,25 +44,16 @@ body {
     background-repeat: no-repeat;
 }
 
-/* .list-benefits{
-    display: flex;
-    width: 100%;
-} */
-
 .list-benefits-section {
-    --timing: .4s;
+    --timing: .2s;
     transition: all var(--timing) ease-out;
-    height: 25em;
-    
-
-
+    min-height: 25em;
 }
 
 .list-benefits {
-    min-height: 100%;
+    height: 100%;
     transition: all var(--timing) ease-out;
-    background-color: blue;
-    
+
 }
 
 .list-benefits > li{
@@ -59,8 +62,7 @@ body {
     align-items: center;
     gap: .7em;
     width: 25%;
-    
-    background-color: green;
+    transition: all var(--timing) ease-out;
 }
 
 .list-benefits > li > h3 {
@@ -75,8 +77,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 2em;
-
-
     width: 5em;
     height: 5em;
     padding: 1.5em;
@@ -86,30 +86,23 @@ body {
 }
 
 .list-benefits > li > div > p{
-    --timing: .5s;
     opacity: 0;
-    transition: all var(--timing) ease-out;
     overflow: hidden;
     text-align: center;
+    font-weight: 600;
+    transition: all var(--timing) ease-out;
 }
 
 .list-benefits > li > div > img{
     width: 4em;
-    --timing: .5s;
+    transition: all var(--timing) ease-out;
 }
 
 .list-benefits > li > div:hover{
-
     cursor: pointer;
-
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em; */
-
     border-radius: .5em;
     height: 15em;
-    width: 100%;
+    width: 15em;
     background-color: var(--primary-color);
 }
 
@@ -117,27 +110,3 @@ body {
     opacity: 100;
     transition: all var(--timing) ease-out;
 }
-
-/* .list-benefits > li > div:hover img{
-    width: 4em;
-    transition: all var(--timing) ease-out;
-} */
-
-/* .list-benefits > li > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-    padding: 1em;
-    border-radius: .5em;
-    height: 100%;
-    background-color: var(--primary-color);
-}
-
-.list-benefits > li > div > p{
-    text-align: center;
-}
-
-.list-benefits > li > div > img{
-    width: 4em;
-} */

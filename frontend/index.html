@@ -9,7 +9,7 @@
 
     <title>taskOne</title>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white flex justify-center">
     <div class="sm:w-11/12 lg:w-3/4 w-full">
         <header class="flex items-center gap-10 bg-rose-600 py-2 px-6">
             <h1 class="text-2xl logo-font">TaskOne</h1>
@@ -25,9 +25,9 @@
                         O TaskOne é uma aplicação colaborativa simples que permite a um único usuário gerenciar membros e tarefas, realizando operações de criar, listar, atualizar e deletar, com atribuição de responsabilidades.
                     </p>
 
-                    <button class="bg-rose-600 hover:bg-rose-800 py-3 px-6 rounded-full transition">
+                    <a href="./pages/task.html" class="bg-rose-600 hover:bg-rose-800 py-3 px-6 rounded-full transition">
                         Create task
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -36,17 +36,15 @@
             </div>
 
             <div class="w-full list-benefits-section">
-                <ul class="list-benefits w-full flex justify-around  flex-col   px-6 md:flex-row">
+                <ul class="list-benefits w-full flex justify-around  items-center flex-col gap-10 px-6 md:flex-row md:items-start md:gap-0 ">
                     <li>
                         <div>   
                             <img src="./assets/images/facilidade-de-uso.svg" alt="facilidade-de-uso">
-
                             <p>
                                 Interface intuitiva que facilita a organização do seu time.
                             </p>
                         </div>
                         <h3>Facilidade de Uso</h3>
-                        <!-- Facilidade de Uso: Interface intuitiva que facilita a organização do seu time. -->
                     </li>
 
                     <li>
@@ -58,7 +56,6 @@
                             </p>
                         </div>
                         <h3>Produtividade</h3>
-                        <!-- Produtividade: Mantenha sua equipe focada com tarefas bem definidas.  -->
                     </li>
 
                     <li>
@@ -68,14 +65,13 @@
                             <p>Mantenha tudo em ordem, com membros e tarefas bem estruturados.</p>
                         </div>
                         <h3>Organização</h3>
-                        <!-- Organização: Mantenha tudo em ordem, com membros e tarefas bem estruturados. -->
                     </li>
                 </ul>
             </div>
         </section>
         
-        <footer class="bg-red-500 w-full h-14">
-
+        <footer class="bg-transparent w-full h-40 flex justify-center items-center">
+            <h3>By - Otavioalv</h3>
         </footer>
     </div>
 </body>
