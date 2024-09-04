@@ -7,7 +7,7 @@ function f_params_to_task() {
         "title" => $_GET["title"],
         "description" => $_GET["description"] ?? "",
         "status" => $_GET['status'] ?? "",
-        "assigned_to" => $_GET["assigned_to"]
+        "member_name" => $_GET["member_name"]
     );
 
     return $data;
@@ -22,12 +22,12 @@ function f_create_task() {
         
         $title = $task['title'];
         $description = $task['description'];
-        $assigned_to = $task['assigned_to'];
+        $member_name = $task['member_name'];
 
-        $sql = "INSERT INTO tasks(title, description, assigned_to) values('$title', '$description', $assigned_to)";
+        $sql = "INSERT INTO tasks(title, description, member_name) values('$title', '$description', '$member_name')";
         
         $conn = f_connection();
-
+        
         if(!$conn->query($sql) === TRUE) {
             $conn->close();
             throw new Exception("Error when creating new task");
@@ -63,7 +63,7 @@ function f_list_task() {
             $queryWhere .= "$param = $_GET[$param]";
         }
 
-        $sql = "SELECT id, title, description, assigned_to, status, due_date from tasks";
+        $sql = "SELECT id, title, description, member_name, status, due_date from tasks";
         if($queryWhere != " WHERE ")
             $sql .= $queryWhere;
 
@@ -80,7 +80,7 @@ function f_list_task() {
                 $jsonTask["id"] = $register["id"];
                 $jsonTask["title"] = $register["title"];
                 $jsonTask["description"] = $register["description"];
-                $jsonTask["assigned_to"] = $register["assigned_to"];
+                $jsonTask["member_name"] = $register["member_name"];
                 $jsonTask["status"] = $register["status"];
                 $jsonTask["due_date"] = $register["due_date"];
 
@@ -111,7 +111,7 @@ function f_update_task() {
         $id = $task['id'];
         $title = $task['title'];
         $description = $task['description'];
-        $assigned_to = $task['assigned_to'];
+        $member_name = $task['member_name'];
         $status = $task['status'];
 
         $valueStatus = "";
@@ -122,7 +122,7 @@ function f_update_task() {
                 SET 
                     title = '$title', 
                     description = '$description', 
-                    assigned_to = $assigned_to
+                    member_name = '$member_name'
                 ".$valueStatus.
                 "WHERE id = $id";
 
