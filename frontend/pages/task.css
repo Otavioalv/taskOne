@@ -42,13 +42,25 @@
     overflow: auto;
 }
 
-.task-item > h1, .task-item > h2, .task-item >  p {
-    width: 100%;
+.task-item > h1 {
+    width: 60%;
 }
 
 .task-item > p {
     overflow: auto;
 }
+
+.task-item > h1, .task-item > h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+.task-item > h2, .task-item >  p {
+    width: 100%;
+}
+
 
 
 .task-bar {
@@ -84,6 +96,7 @@
 
 .form-update-task > div > label{
     font-size: .8em;
+    cursor: pointer
 }
 
 .form-update-task > div > input, .form-update-task > div > textarea, .form-update-task > div > select{
@@ -99,6 +112,37 @@
 }
  
 
+.cancel-edit {
+    position:relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cancel-edit::after,
+.cancel-edit::before {
+    content: "";
+    position: absolute;
+    transform-origin: center;
+    width: 100%;
+    height: 4px;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.cancel-edit::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.cancel-edit::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+.status-options > div > label:hover, .status-options > div > input:hover{
+    cursor: pointer;
+}
 
 @media (max-width: 860px) {
     .container-task {
@@ -126,15 +170,15 @@
         width: 100vw;
         height: 100vw;
         padding: 2em;
-        gap: 4em;
+        gap: 1em;
     }
 
     .task-item > h1{
-        font-size: 3em;
+        font-size: 2em;
     }
 
     .task-item > h2{
-        font-size: 2em;
+        font-size: 1em;
     }
 
     .task-item > p{
@@ -143,5 +187,9 @@
 
     .task-bar {
         width: 6em;
+    }
+    
+    .form-update-task {
+        margin: 2em 0;
     }
 }

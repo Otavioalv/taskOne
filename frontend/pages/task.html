@@ -78,7 +78,7 @@
                                 </button>
                                 
                                 <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                    <div class="cancel-edit"></div>
                                 </button>
                             </div>
 
@@ -90,6 +90,7 @@
                                         id="titulo" 
                                         name="titulo"
                                         placeholder="Título"
+                                        class="outline-none p-3 rounded-sm text-rose-600 focus:outline-rose-600 w-full"
                                     >
                                 </div>
 
@@ -100,6 +101,7 @@
                                         id="nome" 
                                         name="nome"
                                         placeholder="Nome do membro"
+                                        class="outline-none p-3 rounded-sm text-rose-600 focus:outline-rose-600 w-full"
                                     >
                                 </div>
 
@@ -114,7 +116,7 @@
                                     </select>
                                 </div>  -->
 
-                                <div>
+                                <div class="status-options">
                                     <label>STATUS</label>
                                     <div class="">
                                         <!-- w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 -->
@@ -123,7 +125,6 @@
                                             type="radio"
                                             value="Pendent" 
                                             name="status" 
-                                            class="text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                                         >
                                         
                                         <!-- ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 -->
@@ -172,9 +173,10 @@
                                         id="descricao" 
                                         name="descricao"
                                         placeholder="Descrição"
+                                        class="outline-none p-3 rounded-sm text-rose-600 focus:outline-rose-600 w-full"
                                     ></textarea>
                                 </div>
-
+                                <button class="bg-blue-600 hover:bg-blue-800 focus:outline-blue-600 py-2 px-3 rounded-full transition my-5 w-full">ATUALIZAR</button>
                             </form>
                         </div>
 
@@ -190,39 +192,9 @@
                                 </button>
                             </div>
 
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fugit maiores nostrum cupiditate. Consequatur voluptatum voluptate recusandae, temporibus facere voluptates vero. Culpa soluta, quia ea eaque aliquam non facilis quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam reiciendis repellat mollitia numquam est accusamus, ex consequatur placeat impedit amet pariatur officia consequuntur voluptatem ea nemo quisquam, debitis ad?</p>
-                        </div>
-                        <div class="task-item bg-red-500">
-                            
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
-                        </div>
-                        <div class="task-item bg-red-500">
-                            
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                            <h1 class="bg-red-600 sm:p-2 p-1 rounded">Titledddddddddddddddddddddddddddd</h1>
+                            <h2 class="bg-red-600 sm:p-2 p-1 rounded">member name</h2>
+                            <p class="bg-red-600 sm:p-2 p-1 rounded">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fugit maiores nostrum cupiditate. Consequatur voluptatum voluptate recusandae, temporibus facere voluptates vero. Culpa soluta, quia ea eaque aliquam non facilis quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam reiciendis repellat mollitia numquam est accusamus, ex consequatur placeat impedit amet pariatur officia consequuntur voluptatem ea nemo quisquam, debitis ad?</p>
                         </div>
                     </div>
                 </div>
@@ -239,37 +211,9 @@
                                     <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
                                 </button>
                             </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe facere tenetur veniam laborum! Velit totam dolorem explicabo, laboriosam iure fugit quas enim accusamus nisi corrupti expedita vitae distinctio et aspernatur! lo</p>
-                        </div>
-                        <div class="task-item bg-yellow-300">    
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
-                        </div>
-                        <div class="task-item bg-yellow-300">    
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                            <h1 class="bg-yellow-400 sm:p-2 p-1 rounded">Title</h1>
+                            <h2 class="bg-yellow-400 sm:p-2 p-1 rounded">member name</h2>
+                            <p class="bg-yellow-400 sm:p-2 p-1 rounded">Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt magni sint veritatis natus, consequatur, autem soluta nostrum qui est aspernatur voluptate deleniti, dolores labore omnis at! Sit nostrum eaque deserunt! ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
                         </div>
                     </div>
                 </div>
@@ -286,37 +230,9 @@
                                     <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
                                 </button>
                             </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
-                        </div>
-                        <div class="task-item bg-green-400">    
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
-                        </div>
-                        <div class="task-item bg-green-400">    
-                            <div class="task-bar">
-                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
-                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
-                                </button>
-                                
-                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
-                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
-                                </button>
-                            </div>
-                            <h1>Title</h1>
-                            <h2>member name</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                            <h1 class="bg-green-600 sm:p-2 p-1 rounded">Title</h1>
+                            <h2 class="bg-green-600 sm:p-2 p-1 rounded">member name</h2>
+                            <p class="bg-green-600 sm:p-2 p-1 rounded">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, numquam maiores. Numquam voluptate sequi unde nostrum dicta ratione id, nam error temporibus saepe. Quaerat natus consequuntur accusantium mollitia vel modi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum, nihil ullam fugiat velit eaque fugit accusantium. Quibusdam aliquid obcaecati, delectus quia eaque voluptates corporis aliquam quidem tempore, sit voluptatum reprehenderit?</p>
                         </div>
                     </div>
                 </div>
