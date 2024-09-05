@@ -1,8 +1,10 @@
+:root {
+    --task-color-pendent: #ef4444;
+}
+
 .container-task {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    background-color: red;
     width: 100%;
 }
 
@@ -11,23 +13,91 @@
     align-items: center;
     flex-direction: column;
     gap: 1em;
-    background-color: green;
+}
+
+.column-task > h2 {
+    font-size: 1.2em;
+    font-weight: 700;
 }
 
 .itens-tasks{
     display: flex;
-    align-items: center;
     flex-direction: column;
     gap: 1em;
-    background-color: yellow;
 }
 
 .task-item {
     --task-iten-wh: 15em;
     width: var(--task-iten-wh);
     height: var(--task-iten-wh);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    border-radius: .2em;
     background: gray;
+    
+    position: relative;
+
+    overflow: auto;
 }
+
+.task-item > h1, .task-item > h2, .task-item >  p {
+    width: 100%;
+}
+
+.task-item > p {
+    overflow: auto;
+}
+
+
+.task-bar {
+    position: absolute;
+    width: 5em;
+    left: 94%;
+    top: 3%;
+    transform: translateX(-94%);
+    display: flex;
+    gap: 1em;
+}
+
+.task-bar > button {
+    width: 50%;
+}
+
+.task-bar > img {
+    width: 100%;
+}
+
+.form-update-task {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.form-update-task > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+
+.form-update-task > div > label{
+    font-size: .8em;
+}
+
+.form-update-task > div > input, .form-update-task > div > textarea, .form-update-task > div > select{
+    width: 100%;
+    border-radius: .1em;
+    padding: .5em .5em;
+}
+
+
+.form-update-task > div > textarea{
+    min-height: 4em;
+    resize: none;
+}
+ 
 
 
 @media (max-width: 860px) {
@@ -41,6 +111,10 @@
         width: 100%;
     }
 
+    .column-task > h2 {
+        font-size: 2em;
+    }
+
     .itens-tasks{
         flex-direction: row;
         flex-wrap: wrap;
@@ -51,5 +125,23 @@
     .task-item {
         width: 100vw;
         height: 100vw;
+        padding: 2em;
+        gap: 4em;
+    }
+
+    .task-item > h1{
+        font-size: 3em;
+    }
+
+    .task-item > h2{
+        font-size: 2em;
+    }
+
+    .task-item > p{
+        font-size: 1em;
+    }
+
+    .task-bar {
+        width: 6em;
     }
 }

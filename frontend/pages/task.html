@@ -70,25 +70,254 @@
                 <div class="column-task">
                     <h2>Pendent</h2>
                     <div class="itens-tasks">
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
+                        
+                        <div class="task-item bg-red-500">
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+
+                            <form class="form-update-task">
+                                <div>
+                                    <label for="titulo">TÍTULO</label>
+                                    <input 
+                                        type="text" 
+                                        id="titulo" 
+                                        name="titulo"
+                                        placeholder="Título"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label for="nome">NOME DO MEMBRO</label>
+                                    <input 
+                                        type="text" 
+                                        id="nome" 
+                                        name="nome"
+                                        placeholder="Nome do membro"
+                                    >
+                                </div>
+
+                                <!-- <div>
+                                    <label for="status" class="">STATUS</label>
+                                    bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+                                    <select id="status" name="status" class="">
+                                        <option selected>Status</option>
+                                        <option value="Pendent">Pendent</option>
+                                        <option value="In progress">In progress</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
+                                </div>  -->
+
+                                <div>
+                                    <label>STATUS</label>
+                                    <div class="">
+                                        <!-- w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 -->
+                                        <input 
+                                            id="pendent" 
+                                            type="radio"
+                                            value="Pendent" 
+                                            name="status" 
+                                            class="text-red-600 bg-gray-100 border-gray-300 focus:ring-red-500 dark:focus:ring-red-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                        >
+                                        
+                                        <!-- ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 -->
+                                        <label 
+                                            for="pendent" 
+                                            class=""
+                                        >Pendent</label>
+                                    </div>
+                                    
+                                    <div class="">
+                                        <input 
+                                            checked id="in-progress" 
+                                            type="radio" 
+                                            value="In progress" 
+                                            name="status" 
+                                            class=""
+                                        >
+                                        <label 
+                                            for="in-progress" 
+                                            class=""
+                                        >In progress</label>
+                                    </div>
+
+                                    <div class="">
+                                        <input 
+                                            checked id="completed" 
+                                            type="radio" 
+                                            value="Completed" 
+                                            name="status" 
+                                            class=""
+                                        >
+                                        <label 
+                                            for="completed" 
+                                            class=""
+                                        >Completed</label>
+                                    </div>
+
+                                </div>
+
+                                
+
+                                <div>
+                                    <label for="descricao">DESCRIÇÃO</label>
+                                    <textarea 
+                                        type="text" 
+                                        id="descricao" 
+                                        name="descricao"
+                                        placeholder="Descrição"
+                                    ></textarea>
+                                </div>
+
+                            </form>
+                        </div>
+
+                        <div class="task-item bg-red-500">
+                            
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus fugit maiores nostrum cupiditate. Consequatur voluptatum voluptate recusandae, temporibus facere voluptates vero. Culpa soluta, quia ea eaque aliquam non facilis quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quam reiciendis repellat mollitia numquam est accusamus, ex consequatur placeat impedit amet pariatur officia consequuntur voluptatem ea nemo quisquam, debitis ad?</p>
+                        </div>
+                        <div class="task-item bg-red-500">
+                            
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
+                        <div class="task-item bg-red-500">
+                            
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="column-task">
                     <h2>In progress</h2>
                     <div class="itens-tasks">
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
+                        <div class="task-item bg-yellow-300">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe facere tenetur veniam laborum! Velit totam dolorem explicabo, laboriosam iure fugit quas enim accusamus nisi corrupti expedita vitae distinctio et aspernatur! lo</p>
+                        </div>
+                        <div class="task-item bg-yellow-300">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
+                        <div class="task-item bg-yellow-300">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="column-task">
                     <h2>Completed</h2>
                     <div class="itens-tasks">
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
-                        <div class="task-item"></div>
+                        <div class="task-item bg-green-400">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
+                        <div class="task-item bg-green-400">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
+                        <div class="task-item bg-green-400">    
+                            <div class="task-bar">
+                                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                                    <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
+                                </button>
+                                
+                                <button class="bg-blue-600 hover:bg-blue-700 transition p-1 rounded">
+                                    <img src="../assets/images/edit-icon.svg" alt="editar" draggable="false">
+                                </button>
+                            </div>
+                            <h1>Title</h1>
+                            <h2>member name</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea corporis deleniti ipsa est minima necessitatibus.</p>
+                        </div>
                     </div>
                 </div>
             </div>
