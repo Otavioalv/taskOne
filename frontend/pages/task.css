@@ -35,15 +35,9 @@
     gap: 1em;
     padding: 1em;
     border-radius: .2em;
-    background: gray;
-    
     position: relative;
-
     overflow: auto;
-}
-
-.task-item > h1 {
-    width: 60%;
+    padding-top: 3em;
 }
 
 .task-item > p {
@@ -170,6 +164,7 @@
         width: 100vw;
         height: 100vw;
         padding: 2em;
+        padding-top: 4em;
         gap: 1em;
     }
 

@@ -71,8 +71,8 @@ function f_list_task() {
         $conn = f_connection();
         $result = $conn->query($sql);
 
+        $jsonTasksArr = [];
         if($result->num_rows > 0) {
-            $jsonTasksArr = [];
             $cont = 0;
 
             while($register = $result->fetch_assoc()) {
@@ -86,12 +86,13 @@ function f_list_task() {
 
                 $jsonTasksArr[$cont++] = $jsonTask;
             }
-        }
+        } 
 
         $response = array(
             "list" => $jsonTasksArr,
             "status" => 200
         );
+
 
         print(json_encode($response));
     }catch(Exception $e) {

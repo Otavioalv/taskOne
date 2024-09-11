@@ -15,7 +15,7 @@ async function getValuesFormTask(e) {
     const description = formData.get('descricao');
     const name = formData.get('nome');
 
-    if(!title || !description || !name || !status) {
+    if(!title || !description || !name) {
         alert("Preencha os campos corretamente!!!");
         return;
     }
@@ -91,17 +91,38 @@ async function updateTaskController(title, description, name, status, id) {
     addTaskInTaskList(list);
 }
 
+async function deleteTaskController(id) {
+    const paramsUrl = `?id=${id}`;
+    const url = URL + paramsUrl;
+
+    const result = await fetch(url, {
+        method: 'DELETE',
+    })
+    .then(async res => {
+        return await res.json();
+    })
+
+    const list = await listTaskController();
+    addTaskInTaskList(list);
+}   
+
 
 // Functions tasks lists
 
 async function addTaskInTaskList(list) {
+    const containerTask = document.getElementById('container-task');
+    
+    containerTask.querySelector("#pendent-column").innerHTML = `<h2>Pendent</h2><div class="itens-tasks" id="itens-tasks"></div>`;
+    containerTask.querySelector("#inprogress-column").innerHTML = `<h2>In progress</h2><div class="itens-tasks" id="itens-tasks">`;
+    containerTask.querySelector("#completed-column").innerHTML = `<h2>Completed</h2><div class="itens-tasks" id="itens-tasks"></div>`;
+
     list.forEach(element => {
         var classTaskItem = "";
         var classTextTask = "";
         
         const taskBar = `
             <div class="task-bar">
-                <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+                <button onclick="deleteTaskController(${element.id})" class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
                     <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
                 </button>
                 
@@ -112,7 +133,7 @@ async function addTaskInTaskList(list) {
         `;
 
         const divTaskItem = document.createElement('div');
-        const containerTask = document.getElementById('container-task');
+        
         var insertColumn;
         
         if(element.status === "Pendent"){
@@ -127,8 +148,9 @@ async function addTaskInTaskList(list) {
             classTaskItem = `task-item bg-green-400`;
             classTextTask = "bg-green-600 sm:p-2 p-1 rounded";
             insertColumn = containerTask.querySelector("#completed-column");
-        }    
-        
+        }
+
+
         const itensTask = insertColumn.querySelector('#itens-tasks');
 
         divTaskItem.className = classTaskItem;
@@ -141,7 +163,6 @@ async function addTaskInTaskList(list) {
         `;
 
         divTaskItem.innerHTML = taskBar + infoTask;
-
         itensTask.appendChild(divTaskItem);
     });
 }
@@ -158,7 +179,7 @@ async function updateButton(id) {
 
     const formTaskUpdate = `
          <div class="task-bar">
-        <button class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
+        <button onclick="deleteTaskController(${id})" class="bg-red-600 hover:bg-red-700 transition p-1 rounded">
             <img src="../assets/images/bin.svg" alt="lixeira" draggable="false">
         </button>
         
